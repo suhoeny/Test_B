@@ -11,7 +11,7 @@
             overflow: hidden;
 
             font-family: 'Cormorant Garamond', serif;
-            color: #fff;
+            color: rgb(133, 109, 109);
             
             animation: BackColor 5s linear infinite
         }
