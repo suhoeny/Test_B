@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+
+    *{
+        padding: 0;
+        margin: 0;
+
+        /* border: 1px solid rgba(201, 78, 41, 0.205) ;
+	    box-sizing: border-box; */
+    }
+        body{
+            overflow: hidden;
+
+            font-family: 'Cormorant Garamond', serif;
+            color: #fff;
+            
+            animation: BackColor 5s linear infinite
+        }
+            @keyframes BackColor{
+                0%{
+                    background-color: #8d8d8d
+                }
+                50%{
+                    background-color: #dac6a3
+                }
+                100%{
+                    background-color: #8d8d8d
+                }
+            }
+
+            /* 배경 속성 */
+
+ .backmove{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -10;
+}
+
+.cover{
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba( 255, 255, 255, 0.25 );
+    backdrop-filter: blur( 500px );
+    -webkit-backdrop-filter: blur( 500px );  
+
+    z-index: -9;
+}
+    .backmove img{
+        position: relative;
+        left: -400px;
+        height:140vh;
+        
+        transform-origin: calc( 120%) center;
+        animation: backrotate 8s linear infinite 
+    }
+        @keyframes backrotate{
+            0% {
+                transform: rotate(0deg);
+            }
+            25%{
+                transform: rotate(90deg);
+            }   
+            50%{
+                transform: rotate(180deg); 
+            }
+            75%{
+                transform: rotate(270deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+            /* 해더 */
+
+header{
+    position: sticky;
+    top: 0px;
+
+    display: flex;
+    justify-content:space-between;
+    
+
+    height: 130px;
+    
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.30);
+    animation: headermove 4s
+}
+    header a{
+            flex: 1;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-decoration: none;
+            color: #fff;
+    }
+        header a h1{
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+
+            transform-origin: left center;
+            transition-property: 50;
+            animation: fontmove 4s
+        }
+            @keyframes headermove{
+                0% {
+                    height: 100vh; 
+                }
+                70%{
+                    height: 100vh;
+                }
+                100%{
+                    height: 130px;
+                }
+            }
+            @keyframes fontmove{
+                0% {
+                    font-size: 230px;
+                    transform: rotateY(90deg);
+                }
+                70%{
+                    font-size: 230px;
+                    transform: rotateY(0deg);  
+                }
+                100%{
+                    font-size: 28px;
+                    
+                }
+
+            }
+
+        .btnbox{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            
+            width: 36px;
+            height: 36px;
+
+            background-color: rgba( 255, 255, 255, 0 );
+            border-radius: 100%;
+            transition: 0.3s ease-in-out;
+            animation: boxhide 4s
+        }
+            @keyframes boxhide{
+                0% {
+                    position: absolute;
+                }
+                100%{
+                    position: absolute;
+                }  
+            }
+
+            .btnbox img{     
+                width:21px;
+                height:21px;
+
+                opacity: 1;
+                animation: btnhide 4s
+            }
+                @keyframes btnhide{
+                    0% {
+                        opacity: 0;
+                    }
+                    95%{
+                        opacity: 0;
+                    }
+                    100%{
+                        opacity: 1;
+                    }
+                    
+                }
+
+            .btnbox:hover{
+                background-color: rgba( 255, 255, 255, 0.16 ); 
+            }
+
+             /* 메인 */
+main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height:75%;
+    text-align: center;
+}
+    article{
+        flex: 1;
+
+        display: flex;
+        flex-direction: column;
+    }
+        article h2{
+            font-size: 120px;
+            font-weight: 400;
+            line-height:  100px;
+            margin-top: 10px;
+            margin-bottom: 50px;
+            
+            transform-origin: center bottom;
+            transition: 0.5s ease;
+        }
+            article h2:hover{
+                transform: skew(3deg, 4deg)
+            }
+            #textB{
+                font-weight: 500;
+        }
+        article div{
+            display: flex;
+            justify-content: space-between;
+            align-items:flex-end;
+
+            height: 100px;
+
+            font-size: 16px;
+            font-weight: 300; 
+
+        }
+        article h3{
+            display:inline-block;
+            
+            transform: rotate(270deg);
+            
+            font-size: 16px;
+            font-weight: 300;
+        }
+        article a{
+            text-decoration: none;
+            color: #fff;
+        }
+        article a p{
+            
+            transition: 0.3s ease;
+            transform-origin: center center;
+        }
+        article a p:hover, article a h3:hover{
+            
+            animation: btnshow 0.8s infinite;
+        }
+
+    @keyframes btnshow{
+                    0%{
+                        font-size: 16px; 
+                    }
+                    50%{
+                        font-size: 17px;
+                        font-weight: 500;
+                    }
+                    100%{
+                        font-size: 16px; 
+                    }
+                }
